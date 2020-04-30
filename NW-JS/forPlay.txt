@@ -1,0 +1,3 @@
+npm install - in this directory
+npm run prod - in this directory
+open  src.exe in dist\src\win64

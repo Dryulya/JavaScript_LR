@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Нажатие кнопки</title>
+    <script>
+        function btnClick()
+        {
+            let Txt1 = "";
+            let Txt2 = "";
+            Txt1 = document.Test.bt.value;
+            Txt2 = document.Test.bt.name;
+            document.getElementById('ex1').innerHTML="<hr>"+
+                "Вы нажали кнопку: " + Txt1.bold() +
+                " с именем: "  + Txt2.bold() +"<hr>";
+        }
+
+    </script>
+</head>
+<body>
+<h1 id="ex1">Нажатие кнопки</h1>
+<form action="/" name="Test">
+    <input name="bt" type="button" value="Щелкни здесь!" onclick="btnClick()"/>
+</form>
+</body>
+</html>

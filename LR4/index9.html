@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Три Аргумента</title>
+    <script>
+        function f(x, y, z) {
+            if (arguments.length < 3) {
+                document.write("<p style='color: darkred'>Менее трех аргументов - ошибка!</p>")
+            } else if (arguments.length > 3) {
+                document.write("<p style='color: darkred'>Более трех аргументов - ошибка!</p>")
+            } else {
+                document.write("<p style='color: darkgreen'>Три аргумента - ОК!</p>")
+            }
+        }
+
+        f(2, 3, 5, 3);
+        f(1, 2);
+        f(2, 3, 4);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

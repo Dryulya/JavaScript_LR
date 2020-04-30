@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object()</title>
+    <script type="text/javascript">
+        var human = {
+            firstName: "Alex",
+            secondName: "Jazun",
+            age: 27,
+            occupation: "<img src='./images/microsoft.png'>",
+            show:function () {
+                document.write("<p>First name: " + this.firstName);
+                document.write("<p>Second name: " + this.secondName);
+                document.write("<p>Age: " + this.age + " years old");
+                document.write(this.occupation+"<hr>");
+            },
+            changeWork:function (img_elem) {
+                this.occupation = img_elem;
+            }
+        };
+        human.show();
+        human.changeWork("<img src='./images/cyber.jpeg'>");
+        human.show();
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

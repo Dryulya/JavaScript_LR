@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Динамическое заполнение списка</h1>
+<form name="Sel">
+    <select name="listOfLinks"></select>
+    <input type="button" value="Переход"
+           onclick="window.location.href = document.links[Sel.listOfLinks.selectedIndex]"/>
+</form>
+<a href="https://rozetka.com.ua/"></a>
+<a href="https://allo.ua"></a>
+<a href="https://www.olx.ua"></a>
+<a href="https://www.zieit.edu.ua"></a>
+<script>
+    for (var i = 0; i < document.links.length; i++) {
+        document.Sel.listOfLinks.options[i] = new Option(document.links[i], i, false, false);
+    }
+
+    document.Sel.listOfLinks.selectedIndex = 0;
+</script>
+</body>
+</html>

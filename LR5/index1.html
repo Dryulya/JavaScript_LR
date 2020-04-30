@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Обьекты</title>
+    <script type="text/javascript">
+        var instance = { propertyA: 222, propertyB: 444 };
+
+        document.write("<p>instance.propertyA = " + instance.propertyA);
+        document.write("<p>instance.propertyB = " + instance.propertyB);
+        document.write("<hr/>");
+        instance.propertyA = 333;       // 1 способ.
+        instance["propertyB"] = 555;    // 2 способ.
+
+        document.write("<p>instance.propertyA = " + instance.propertyA);
+        document.write("<p>instance.propertyB = " + instance.propertyB);
+        document.write("<hr/>");
+        document.write("<p>instance = " + instance);
+        document.write("<p>instance (JSON.stringify) = " + JSON.stringify(instance));
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

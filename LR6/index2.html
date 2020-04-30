@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<script>
+    let vacation = {
+        turkey: {
+            key: 'turkey',
+            price: 2800,
+            img: "./images/turkey.jpg",
+            description:
+                "Турция – государство на юго-востоке Европы и юго-западе Азии, культура которого сочетает древнегреческие, персидские, римские, византийские и османские традиции."
+        },
+        egypt: {
+            key: 'egypt',
+            price: 2000,
+            img: "./images/egipet.jpg",
+            description:
+                "Египет – страна в Северо-Восточной Африке и на Ближнем Востоке. О ее богатой истории, насчитывающей более пяти тысяч лет, напоминают археологические памятники в плодородной долине реки Нил, среди которых пирамиды Гизы, Большой сфинкс, а также Карнакский храм"
+        },
+        spain: {
+            key: 'spain',
+            price: 4500,
+            img: "./images/spain.jpeg",
+            description:
+                "Испания – европейская страна, расположенная на Пиренейском полуострове. Территория Испании разделена на 17 автономных регионов. В столице страны, Мадриде, находятся Королевский дворец и музей Прадо, где хранятся произведения европейских мастеров."
+        },
+        france: {
+            key: 'france',
+            price: 3500,
+            img: "./images/france.jpg",
+            description:
+                "Франция – это страна в Западной Европе, на территории которой находятся средневековые города, альпийские деревни и пляжи Средиземного моря."
+        },
+        somali: {
+            key: 'somali',
+            price: 10,
+            img: "./images/somali.jpg",
+            description:
+                "Республика Сомали́ — восточноафриканское государство. В результате гражданской войны и деятельности сепаратистов Сомали на долгое время фактически прекратило своё существование и распалось на множество частей."
+        }
+    };
+
+    function writeCard(data) {
+        let content = '<div class="card mb-5 mr-5" style="width: 18rem;">\n' +
+            '  <img src="' + data.img + '" class="card-img-top" alt="image">\n' +
+            '  <div class="card-body">\n' +
+            '    <h5 class="card-title">Цена тура: ' + data.price + 'грн. за 1 день.</h5>\n' +
+            '    <p class="card-text">' + data.description + '</p>\n' +
+            '    <button class="btn btn-primary"  data-key="' + data.key + '" >Посчитать Стоимость</button>\n' +
+            '  </div>\n' +
+            '</div>';
+        document.write(content);
+    }
+
+    document.write('<div class="container"><div class="row">');
+
+    for (elem in vacation) {
+        writeCard(vacation[elem]);
+    }
+
+    document.write('</div></div>');
+
+    $('[data-key]').click(function (e) {
+        let key = $(this).data('key');
+        let humans_count = prompt('Сколько человек летит в ' + key + '?');
+        if (isNaN(humans_count)) {
+            alert('Некорректные данные.');
+            return;
+        }
+        let days_count = prompt('На Сколько дней хотите полететь?');
+        if (isNaN(days_count)) {
+            alert('Некорректные данные.');
+            return;
+        }
+        alert('Полет в ' + key + ' на ' + days_count + ' дней для ' + humans_count + ' человек будет стоить: ' + (+humans_count * (+days_count) * vacation[key].price));
+    });
+</script>
+</body>
+</html>

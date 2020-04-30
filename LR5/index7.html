@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Строитель</title>
+    <script type="text/javascript">
+        var builder = new Object();
+        builder.createRoof = function () {
+            document.write("<img src='./images/roof.jpeg' style='width: 190px;height: auto;'/><br/>");
+        };
+        builder.createFirstFloor = function () {
+            document.write("<img src='./images/FirstFloor.jpeg' style='width: 190px;height: auto;'/><br/>");
+        };
+        builder.createSecondFloor = function () {
+            document.write("<img src='./images/secondFloor.jpeg' style='width: 190px;height: auto;'/><br/>");
+        };
+        builder.createBasement = function () {
+            document.write("<img src='./images/basement.jpeg' style='width: 190px;height: auto;'/><br/>");
+        };
+        // Строительство дома.
+        builder.createRoof();
+        builder.createSecondFloor();
+        builder.createFirstFloor();
+        builder.createBasement();
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

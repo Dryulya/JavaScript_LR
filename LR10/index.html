@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Регистрация</h1>
+
+<form name="sel1">
+    <table>
+        <tr>
+            <td><b>Идентификатор:</b></td>
+            <td><input type="text" name="id" size="20" onblur="this.value = this.value.toUpperCase()"></td>
+        </tr>
+        <tr>
+            <td><b>Пароль:</b></td>
+            <td><input type="password" name="pwd" size="20" onfocus="this.select()"></td>
+        </tr>
+        <tr>
+            <td><b>Проверка пароля:</b></td>
+            <td><input type="password" name="repeat" size="20" onfocus="this.select()"></td>
+        </tr>
+    </table>
+    <input type="button" value="Готово" onclick="Complete()">
+    <input type="reset" value="Сброс"/>
+</form>
+<script>
+    function Complete() {
+        if (document.sel1.pwd.value == document.sel1.repeat.value) {
+            alert("Вас зарегистрировали \n ID = " + document.sel1.id.value + ", Password = " + document.sel1.pwd.value);
+        } else {
+            alert('Ошибка при вводе пароля. \n Попробуйте еще раз.');
+        }
+    }
+</script>
+</body>
+</html>

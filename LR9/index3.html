@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Нажатие кнопки</title>
+    <script>
+        function btnClick() {
+            if (document.Test.sex[0].checked) {
+                document.Test.sex[1].click();
+            } else {
+                document.Test.sex[0].click();
+            }
+        }
+    </script>
+</head>
+<body>
+<h1 id="ex1">Нажатие кнопки</h1>
+<form action="/" name="Test">
+    <input name="sex" type="radio" value="man" checked/>Мужской
+    <input name="sex" type="radio" value="woman"/>Женский
+    <input type="button" value="смена состояния" onclick="btnClick()">
+</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Строитель</title>
+    <script type="text/javascript">
+        var house = {
+            roof: "<img src='./images/roof.jpeg' style='width: 190px;height: auto;'/><br/>",
+            secondFloor: "<img src='./images/secondFloor.jpeg' style='width: 190px;height: auto;'/><br/>",
+            firstFloor: "<img src='./images/FirstFloor.jpeg' style='width: 190px;height: auto;'/><br/>",
+            basement: "<img src='./images/basement.jpeg' style='width: 190px;height: auto;'/><br/>",
+            address: "<p style='color:green'>UK. London. Muswell Hill. N10<hr/>"
+        };
+
+        for (var element in house) {
+            document.write(house[element]);
+        }
+        //цикл for/in не проходит по всем элементам массива(свойствам объекта), а перебирает перечисленные
+        var arr = [];
+        var _ind = 0;
+        arr[0] = true;
+        arr[4] = 1;
+        arr[122] = "people";
+        for (_ind in arr) {
+            arr[3] = false; // созданный элемент массива в цикле for/in не всегда отобразиться самим циклом
+            console.log(_ind);
+        }
+        console.log(arr);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

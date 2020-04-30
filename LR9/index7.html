@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Заполните анкету</title>
+</head>
+<body>
+<h1>Заполните анкету</h1>
+
+<form name="Sel">
+
+    <label for="good">
+        <input type="radio" id="good" name="code" value="Good" onclick="if(this.checked){checkRadio(this.form, this.value)}">
+        Явка в норме
+    </label>
+    <br>
+    <label for="bad">
+        <input type="radio" id="bad" name="code" value="Bad" onclick="if(this.checked){checkRadio(this.form, this.value)}">
+        Явка провалена
+    </label>
+
+    <textarea name="letter" id="letter" cols="35" rows="3"></textarea>
+
+    <input type="button" value="Готово" onclick="alert(document.Sel.letter.value)">
+    <input type="reset" value="Сброс"/>
+</form>
+
+<script>
+    var OK = "Тетя Эльза чувствует себя хорошо. \n Юстас.";
+    var Problem = "Тетя Эльза заболела. \n Юстас.";
+
+    function getDate() {
+        return (new Date()).toLocaleString() + "\n";
+    }
+
+    function checkRadio(form, value) {
+        if (value == "Good") {
+            form.letter.value = getDate() + OK;
+        } else form.letter.value = getDate() + Problem;
+    }
+</script>
+</body>
+</html>

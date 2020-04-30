@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Функции в JavaScript</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        var name;
+        var sname;
+        var age;
+        var repeater;
+
+        function ask() {
+            name = prompt("Ведите свое имя:");//записали значение глобальной переменной
+            sname = prompt("Введите свою фамилию:");//записали значение глобальной переменной
+            age = prompt("Введите свой возраст:");//записали значение глобальной переменной
+        }
+
+        function say() {
+            document.write("Имя: " + name + "<br />");//вызвали значение глобальной переменной
+            document.write("Фамилия: " + sname + "<br />");//вызвали значение глобальной переменной
+            document.write("Возраст: " + age + "<br />");//вызвали значение глобальной переменной
+            document.write("<hr/>");
+        }
+
+        // Вызов функций.
+
+        do {
+            ask();
+            say();
+            repeater = confirm("Пройти заполнение еще раз?");
+        } while (repeater);
+
+
+    </script>
+
+</head>
+<body>
+</body>
+</html>

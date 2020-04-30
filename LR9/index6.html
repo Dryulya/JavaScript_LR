@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Заполните анкету</title>
+</head>
+<body>
+<h1>Заполните анкету</h1>
+
+<form name="Sel">
+    <table>
+        <tr>
+            <td><b>Фамилия:</b></td>
+            <td><input type="text" name="last_name" size="20" onblur="this.value = this.value.toUpperCase()"/></td>
+        </tr>
+        <tr>
+            <td><b>Имя:</b></td>
+            <td><input type="text" name="first_name" size="20" onblur="this.value = this.value.toUpperCase()"/></td>
+        </tr>
+        <tr>
+            <td><b>Возраст:</b></td>
+            <td><input type="text" name="age" size="3" value="18" onblur="this.value = CheckAge(this.value)"
+                       onfocus="this.select()"/></td>
+        </tr>
+        <tr>
+            <td><b>Телефон:</b></td>
+            <td><input type="text" name="phone" size="10"/></td>
+        </tr>
+    </table>
+    <input type="button" value="Готово" onclick="Complete()"/>
+    <input type="reset" value="Сброс"/>
+</form>
+<script>
+    function Complete() {
+        var str = "Фамилия: " + document.Sel.last_name.value +
+            "\n Имя: " + document.Sel.first_name.value +
+            "\n Возраст: " + document.Sel.age.value +
+            "\n Телефон: " + document.Sel.age.value;
+        alert(str);
+    }
+
+    function CheckAge(age) {
+        return (age < 18) ? "18" : age;
+    }
+</script>
+</body>
+</html>
